@@ -105,8 +105,8 @@ window.addEventListener('load',()=>{
 
 	function createXhrRequest(){
 		const xhr = new XMLHttpRequest();
-// 		let url = "https://saurav.tech/NewsAPI/top-headlines/category/general/in.json"
-	    	let url="https://newsapi.org/v2/top-headlines?country=in&apiKey=006fbc3064804860b4a4da35ba6f62a1";
+		let url = "https://saurav.tech/NewsAPI/top-headlines/category/general/in.json"
+// 	    	let url="https://newsapi.org/v2/top-headlines?country=in&apiKey=006fbc3064804860b4a4da35ba6f62a1";
 	
         xhr.open("GET",url,true);
 
@@ -141,7 +141,12 @@ xhr.send();
 
 })
 
-$(window).load(function() {
-	// Animate loader off screen
-	$(".se-pre-con").fadeOut("slow");;
-});
+$(window).on('load', function(){
+	setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
+  });
+  function removeLoader(){
+	  $( ".se-pre-con" ).fadeOut(500, function() {
+		// fadeOut complete. Remove the loading div
+		$( ".se-pre-con" ).remove(); //makes page more lightweight 
+	});  
+  }
