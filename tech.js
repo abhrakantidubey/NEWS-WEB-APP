@@ -105,7 +105,7 @@ window.addEventListener('load',()=>{
 
 	function createXhrRequest(){
 		const xhr = new XMLHttpRequest();
-		let url = "https://saurav.tech/NewsAPI/top-headlines/category/general/in.json"
+		let url = "https://saurav.tech/NewsAPI/top-headlines/category/technology/in.json"
 
 // 	    let url="https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=006fbc3064804860b4a4da35ba6f62a1";
 	
